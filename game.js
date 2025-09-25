@@ -1,6 +1,21 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+const bgMusic = document.getElementById("bgMusic");
+
+// Start music after first user interaction anywhere on page
+function startMusic() {
+  if (bgMusic.paused) {
+    bgMusic.play();
+  }
+  // Remove the listeners so it only triggers once
+  window.removeEventListener('keydown', startMusic);
+  window.removeEventListener('mousedown', startMusic);
+}
+
+window.addEventListener('keydown', startMusic); // any key
+window.addEventListener('mousedown', startMusic); // any mouse click
+
 // Highway settings
 const HIGHWAY_WIDTH = 60;
 const HIGHWAY_Y = canvas.height / 2;
