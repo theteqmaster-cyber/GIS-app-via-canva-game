@@ -60,7 +60,7 @@ const ROADBLOCK_HEIGHT = 32;
 const ROADBLOCK_COLOR = "#e74c3c";
 // Increased frequency value so roadblocks are farther apart:
 const ROADBLOCK_FREQ = 3000; // was 520, now farther apart
-const ROADBLOCK_WAIT = 4000; // ms
+const ROADBLOCK_WAIT = 1000; // ms
 
 let roadblocks = [];
 let lastRoadblockX = 0;
