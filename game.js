@@ -567,3 +567,57 @@ function setVelocity() {
 }
 
 requestAnimationFrame(gameLoop);
+
+// --- Mobile Controls ---
+const leftBtn = document.getElementById("left-btn");
+const rightBtn = document.getElementById("right-btn");
+
+// Helper to start music on mobile tap
+function handleMobileControlStartMusic() {
+  startMusic();
+}
+
+// Touch and click events for left
+leftBtn.addEventListener("touchstart", e => {
+  e.preventDefault();
+  keys["ArrowLeft"] = true;
+  setVelocity();
+  handleMobileControlStartMusic();
+});
+leftBtn.addEventListener("mousedown", e => {
+  keys["ArrowLeft"] = true;
+  setVelocity();
+  handleMobileControlStartMusic();
+});
+leftBtn.addEventListener("touchend", e => {
+  e.preventDefault();
+  keys["ArrowLeft"] = false;
+  setVelocity();
+});
+leftBtn.addEventListener("mouseup", e => {
+  keys["ArrowLeft"] = false;
+  setVelocity();
+});
+
+// Touch and click events for right
+rightBtn.addEventListener("touchstart", e => {
+  e.preventDefault();
+  keys["ArrowRight"] = true;
+  setVelocity();
+  handleMobileControlStartMusic();
+});
+rightBtn.addEventListener("mousedown", e => {
+  keys["ArrowRight"] = true;
+  setVelocity();
+  handleMobileControlStartMusic();
+});
+rightBtn.addEventListener("touchend", e => {
+  e.preventDefault();
+  keys["ArrowRight"] = false;
+  setVelocity();
+});
+rightBtn.addEventListener("mouseup", e => {
+  keys["ArrowRight"] = false;
+  setVelocity();
+});
+
